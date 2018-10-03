@@ -5,7 +5,7 @@ An Amazon Lightsail server configuration project.
 This up to date guide is designed to help other Udacity students with the final project for the FSND. This will give a step by step description into deploying a Flask application using Ubuntu and Apache with Amazon Lightsail.
 
 ## IP & Hostname
-- Host Name: [did not get]
+- Host Name: ec2-13-127-209-207.ap-south-1.compute.amazonaws.com
 - IP Address: 13.127.209.207
 
 ## Amazon Lightsail Set Up
@@ -55,7 +55,7 @@ This up to date guide is designed to help other Udacity students with the final 
  20. Change the owner of the `.ssh` directory from **root** to **grader** by using the command `$ sudo chown -R grader:grader /home/grader/.ssh`
  21. The last thing we need to do for the SSH configuration is restart its service with `$ sudo service ssh restart`
  22. **Disconnect from the server**
- 23. Now we need to login with the grader account using ssh. From your local terminal type `$ ssh -i ~/.ssh/udacity.rsa grader@18.188.169.39`
+ 23. Now we need to login with the grader account using ssh. From your local terminal type `$ ssh -i ~/.ssh/udacity.rsa grader@13.127.209.207`
  24. You should now be logged into your server via SSH
  25. Lets enforce key authentication from the ssh configuration file by editing `$ sudo nano /etc/ssh/sshd_config`. Find the line that says **PasswordAuthentication** and change it to no. Also find the line that says **Port 22** and change it to **Port 2200**. Lastly change **PermitRootLogin** to no.
  26. Restart ssh again: `$ sudo service ssh restart`
@@ -118,8 +118,6 @@ $ sudo pip install httplib2 oauth2client sqlalchemy psycopg2 #etc...
 ```
 
 11. Now for our application to properly run we must do some tweaking to the `__init__.py` file.
-12. Anywhere in the file where Python tries to open `client_secrets.json` or `fb_client_secrets.json` must be changed to its complete path ex: `/var/www/catalog/catalog/client_secrets.json`
-![enter image description here](http://mulligandev.com/assets/lsc/lsc_08.JPG)
 
 13.  Time to configure and enable our virtual host to run the site
 ```
@@ -172,8 +170,7 @@ $ exit
 ```
 Your command line should now be back to `grader`.
 
-17. Now use nano again to edit your` __init__.py`, `database_setup.py`, and `createitems.py` files to change the database engine from `sqlite://catalog.db` to `postgresql://username:password@localhost/catalog`
-![enter image description here](http://mulligandev.com/assets/lsc/lsc_09.JPG)
+17. Now use nano again to edit your` main.py`, `database_setup.py`, and `CRUD_operations.py` files to change the database engine from `sqlite://catalog.db` to `postgresql://username:password@localhost/catalog`
 
 18. Restart your apache server `$ sudo service apache2 restart` and now your IP address and hostname should both load your application.
 
