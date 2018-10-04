@@ -5,8 +5,10 @@ An Amazon Lightsail server configuration project.
 This up to date guide is designed to help other Udacity students with the final project for the FSND. This will give a step by step description into deploying a Flask application using Ubuntu and Apache with Amazon Lightsail.
 
 ## IP & Hostname
-- Host Name: ec2-13-127-209-207.ap-south-1.compute.amazonaws.com
+- Host Name: ec2-13-233-107-10.ap-south-1.compute.amazonaws.com
 - IP Address: 13.127.209.207
+- password for grader: 123456
+- passphrase: qwerty
 
 ## Amazon Lightsail Set Up
 
