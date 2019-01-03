@@ -181,4 +181,3 @@ Your command line should now be back to `grader`.
  - https://github.com/callforsky/udacity-linux-configuration
  - https://github.com/iliketomatoes/linux_server_configuration
 
-Any suggestions for this guide please email me at mkmllgn@gmail.com
